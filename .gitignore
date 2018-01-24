@@ -32,3 +32,9 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+
+.DS_Store
+Collisions101/.DS_Store
+Collisions101/Library
+Collisions101/Temp
+Collisions101/UnityPackageManager
