@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PickupController : MonoBehaviour {
 	public GameObject pickupPrefab;
-	public int pickupNumber = 0;		// The number of pickups we've created.
+	public static int pickupNumber = 2;		// The number of pickups we've created.
 	
 	private bool quitting = false;
 
@@ -24,7 +24,7 @@ public class PickupController : MonoBehaviour {
 			player = GameObject.Find("Player");
 			var playerPosition = player.transform.position;
 			newPickup.transform.position = playerPosition + new Vector3(1, 0, 1);
-			name = "Pickup(" + ++pickupNumber + ")";
+			newPickup.name = "Pickup(" + (pickupNumber++) + ")";
 			newPickup.SetActive(true);
 		}
 	}

@@ -6,6 +6,7 @@ public class GameController : MonoBehaviour {
 	public GameObject pickupPrefab;
 	
 	void Start () {
-		Instantiate(pickupPrefab);
+		var pu = Instantiate(pickupPrefab);
+		pu.name = "Pickup(1)";
 	}
 }
