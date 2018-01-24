@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PickupController : MonoBehaviour {
-	public GameObject pickupPrefab;
-	public static int pickupNumber = 2;		// The number of pickups we've created.
+	//public GameObject pickupPrefab;
 	
 	private bool quitting = false;
 
@@ -20,11 +19,11 @@ public class PickupController : MonoBehaviour {
 		// Create a new pickup. It won't be active so we don't need to worry about
 		// colliding with it as soon as we create it.
 		if (!quitting) {
-			var newPickup = Instantiate(pickupPrefab);
+			var newPickup = Instantiate(GameController.puPrefab);
 			player = GameObject.Find("Player");
 			var playerPosition = player.transform.position;
 			newPickup.transform.position = playerPosition + new Vector3(1, 0, 1);
-			newPickup.name = "Pickup(" + (pickupNumber++) + ")";
+			newPickup.name = "Pickup(" + (++GameController.pickupNumber) + ")";
 			newPickup.SetActive(true);
 		}
 	}
